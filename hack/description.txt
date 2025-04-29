@@ -1,0 +1,52 @@
+Project Overview
+This project is a Flask-based web application for simulating and monitoring human vital signs in real-time. It generates synthetic vital data (heart rate, SpO₂, temperature), evaluates the health condition using basic logic, logs the readings, and presents this via a web API.
+
+Description
+The system consists of four main components:
+
+Flask App (app.py):
+
+Hosts a web server.
+
+Exposes an API endpoint (/api/vitals) that returns live simulated vitals and analysis in JSON format.
+
+Renders a basic web interface (index.html, not provided but referenced).
+
+Sensor Simulation (sensor_simulation.py):
+
+Simulates health data: heart rate, oxygen saturation (SpO₂), and body temperature.
+
+Introduces a controlled probability of generating abnormal values for testing alert conditions.
+
+Health Analysis (health_ai.py):
+
+Analyzes vital signs for anomalies.
+
+Flags any abnormalities (e.g., high heart rate, low SpO₂).
+
+Returns a status (OK or Warning) and any relevant alerts.
+
+Logger (logger.py):
+
+Logs all vitals and their corresponding health analysis results to a CSV file (health_log.csv).
+
+Each record includes timestamp, vitals, status, and alerts.
+
+Use Cases
+Medical Training Simulations: Demonstrating how patient monitoring systems respond to various health conditions.
+
+Prototype Development: Serving as a baseline for building more sophisticated IoT or AI-driven health monitoring solutions.
+
+Testing Data Pipelines: Generating realistic, timestamped health data for analytics, visualization, or machine learning testing.
+
+Remote Health Monitoring Demos: Mimicking the behavior of wearable health devices to test backend infrastructure.
+
+Design Highlights
+Modular Architecture: Each functionality (simulation, analysis, logging, UI/API) is cleanly separated, promoting easy expansion.
+
+Randomized Input Generation: Smart simulation design allows normal and edge-case vitals for robust testing.
+
+Simple Rule-Based AI: The health analysis relies on threshold logic but is extendable to ML models.
+
+Persistent Logging: Captures data for audits, visualization, or longitudinal studies.
+
